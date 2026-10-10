@@ -1,17 +1,33 @@
-
 package uk.ac.westminster.products_api;
 
 public class Product {
 
-    // Product details
-    public Long id;
-    public String name;
-    public double price;
+    // Private fields - encapsulation
+    private Long id;
+    private String name;
+    private double price;
 
-    // Constructor
+    // No-argument constructor
+    public Product() {
+    }
+
+    // Constructor with all product details
     public Product(Long id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    // Getters allow other classes to read the private fields
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }
