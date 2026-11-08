@@ -22,13 +22,17 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
+    @GetMapping ("/products/summaries")
+    public List<String> getSummaries(){ return productService.getAllSummaries(); }
+
     @GetMapping("/products/{id}")
     public Product getProductById(@PathVariable Long id) {
         return productService.getProductById(id).orElse(null);
     }
 
+    // Accept DigitalProduct because Product is abstract and cannot be instantiated directly.
     @PostMapping("/products")
-    public Product addProduct(@RequestBody Product product) {
+    public Product addProduct(@RequestBody DigitalProduct product) {
         return productService.addProduct(product);
     }
 
@@ -41,6 +45,8 @@ public class ProductController {
     public List<Product> search(@RequestParam String name) {
         return productService.findByName(name);
     }
+
+
 
 
 

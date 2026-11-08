@@ -1,6 +1,6 @@
 package uk.ac.westminster.products_api;
 
-public class Product {
+public abstract class Product {
 
     // Private fields - encapsulation
     private Long id;
@@ -43,5 +43,7 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
+//an abstract method has no body, each concrete subclass must provide it's own implementation
+    public abstract String getSummary();
 
 }
